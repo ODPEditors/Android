@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+        android:key="pref_key_storage_settings"
+        android:title="Prefrences group !" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_sync"
+            android:summary="[most of the time, does not work]"
+            android:title="Sync my mind with my heart " />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="pref_key_storage_settings"
+        android:title="Some other group preferences.." >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:enabled="false"
+            android:key="pref_key_auto_delete"
+            android:summary="This works when you are able to tick/untick it"
+            android:title="Auto-review sites" />
+
+        <Preference
+            android:gravity="right"
+            android:key="pref_key_mms_delete_limit1"
+            android:summary="I need to align this properly!"
+            android:title="إقليمـي " />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_key_auto_delete"
+            android:summary="With some people, this depends of moon&apos;s phase"
+            android:title="Be kind" />
+
+        <Preference
+            android:key="pref_key_mms_delete_limit1"
+            android:summary="Català, 日本語,  Polski, Русский, Svenska...அறிவியல் "
+            android:title="UTF8 for the win!" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_key_auto_delete"
+            android:summary="Tick if your pet loves you too"
+            android:title="I love my dog, cat, fish, bird, spider, etc" />
+
+        <Preference
+            android:key="something"
+            android:summary="Tick if you lack of Love"
+            android:title="Make me rich" />
+        <Preference
+            android:key="pref_key_mms_delete_limit1"
+            android:summary=""
+            android:title="About Open Directory Project for Android" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

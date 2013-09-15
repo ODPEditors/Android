@@ -1,0 +1,111 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+		<!-- always show in toolbar -->
+		<item
+				android:id="@+id/menu_browse_back"
+				android:enabled="false"
+				android:icon="@drawable/back"
+				android:showAsAction="always"
+				android:title="Go Back"/>
+		<item
+				android:id="@+id/menu_browse_forward"
+				android:enabled="false"
+				android:icon="@drawable/forward"
+				android:showAsAction="always"
+				android:title="Go Forward"/>
+		<item
+				android:id="@+id/menu_browse_up"
+				android:enabled="false"
+				android:icon="@drawable/up"
+				android:showAsAction="always"
+				android:title="Go Up"/>
+		<item
+				android:id="@+id/menu_refresh"
+				android:icon="@drawable/refresh"
+				android:showAsAction="always"
+				android:title="Refresh"/>
+		<item
+				android:id="@+id/menu_bookmark"
+				android:enabled="false"
+				android:icon="@drawable/unbookmark"
+				android:showAsAction="always"
+				android:title="Bookmark"/>
+
+		<!--
+         item
+				android:id="@+id/menu_add_site"
+				android:icon="@drawable/add"
+				android:showAsAction="always"
+				android:title="Add new site  (Editors only)"/
+		-->
+		
+        <!-- if room -->
+      <item
+              android:id="@+id/menu_open_in_browser_public"
+              android:icon="@drawable/web"
+              android:showAsAction="ifRoom"
+              android:title="Open category public page"/>
+      
+      <!-- never show in toolbar -->
+		<item
+				android:id="@+id/menu_suggest"
+				android:showAsAction="never"
+				android:title="Suggest new site (Public only)"/>
+		<item
+				android:id="@+id/menu_apply"
+				android:showAsAction="never"
+				android:title="Become an Editor"/>
+		<!--
+             item android:id="@+id/menu_search"
+		          android:title="Search ODP"
+		          
+		          android:showAsAction="ifRoom|collapseActionView"
+		          android:actionViewClass="android.widget.SearchView" 
+	           /
+		-->
+		<item
+				android:id="@+id/menu_share"
+				android:actionProviderClass="android.widget.ShareActionProvider"
+				android:showAsAction="ifRoom"
+				android:title="Share category"/>
+		<!--
+      shown in a submenu and if there is room 
+      
+      <item android:id="@+id/menu_submenu"
+          android:title="More…"
+          android:showAsAction="ifRoom">
+		        <menu>
+		-->
+		<item
+				android:id="@+id/menu_open_in_browser_edit"
+				android:showAsAction="never"
+				android:title="Edit category"/>
+		<item
+				android:id="@+id/menu_open_in_browser_abuse"
+				android:showAsAction="never"
+				android:title="Report abuse in category"/>
+		<item
+				android:id="@+id/menu_copy_category_to_clipboard"
+				android:showAsAction="never"
+				android:title="Copy category path to clipboard"/>
+		<item
+				android:id="@+id/menu_copy_category_url_to_clipboard"
+				android:showAsAction="never"
+				android:title="Copy category URL to clipboard"/>
+		<!--
+         item
+				android:id="@+id/menu_about"
+				android:showAsAction="never"
+				android:title="About ODP for Android"/
+		-->
+		<!--
+                    item
+						        android:id="@+id/menu_settings"
+						        android:title="Preferences"
+						        android:showAsAction="ifRoom"
+						        /
+		-->
+		<!--
+    </menu>
+    </item>
+		-->
+</menu>

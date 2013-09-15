@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/empty"
+		style="@style/empty"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_gravity="center_horizontal"
+		android:gravity="center_horizontal"
+		android:visibility="gone">
+		<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:gravity="center_vertical"
+				android:orientation="horizontal">
+				<ImageView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/robozilla"/>
+				<LinearLayout
+						style="@style/empty"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center_vertical"
+						android:gravity="center_vertical"
+						android:orientation="vertical">
+						<TextView
+								style="@style/empty_roar"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="Roaarr!"/>
+						<TextView
+								android:id="@+id/empty_info"
+								style="@style/empty_info"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="No data to display here"/>
+				</LinearLayout>
+		</LinearLayout>
+</LinearLayout>
