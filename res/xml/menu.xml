@@ -46,10 +46,10 @@
               android:title="Open category public page"/>
       
       <!-- never show in toolbar -->
-		<item
-				android:id="@+id/menu_suggest"
-				android:showAsAction="never"
-				android:title="Suggest new site (Public only)"/>
+        <item
+                android:id="@+id/menu_suggest"
+                android:showAsAction="never"
+                android:title="Suggest new site (Public only)"/>
 		<item
 				android:id="@+id/menu_apply"
 				android:showAsAction="never"
@@ -91,6 +91,10 @@
 				android:id="@+id/menu_copy_category_url_to_clipboard"
 				android:showAsAction="never"
 				android:title="Copy category URL to clipboard"/>
+        <item
+                android:id="@+id/menu_add_site"
+                android:showAsAction="never"
+                android:title="Add example.net to ODP"/>
 		<!--
          item
 				android:id="@+id/menu_about"

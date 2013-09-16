@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
@@ -45,6 +46,9 @@ public class Home extends Activities {
 		Shared.log("Home()", mDebug);
 		Shared.mHome = this;
 		Shared.mActivity = this;
+		
+		//receive Intents from external applications
+		Shared.mIntentReceiver = new IntentReceiver();
 	}
 
 	@Override
@@ -57,6 +61,8 @@ public class Home extends Activities {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Shared.log("Home().onCreate()", mDebug);
+		
+		Shared.mIntentReceiver.receive();
 
 		setContentView(R.xml.home);
 
@@ -316,7 +322,15 @@ public class Home extends Activities {
 		// CREATE SHARE ACTIONS
 		MenuItem item = menu.findItem(R.id.menu_share);
 		mShareActionProvider = (ShareActionProvider) item.getActionProvider();
-
+		
+		if(Shared.mIntentReceiver.mDomain != null && Shared.mIntentReceiver.mDomain != ""){
+			menu.findItem(R.id.menu_add_site).setTitleCondensed("Add "+Shared.mIntentReceiver.mDomain+" to ODP");
+			menu.findItem(R.id.menu_add_site).setTitle("Add "+Shared.mIntentReceiver.mDomain+" to ODP");
+			menu.findItem(R.id.menu_add_site).setVisible(true);
+		} else {
+			menu.findItem(R.id.menu_add_site).setVisible(false);
+		}
+			
 		menu.findItem(R.id.menu_browse_up).setEnabled(false);
 		menu.findItem(R.id.menu_browse_back).setEnabled(false);
 		menu.findItem(R.id.menu_browse_forward).setEnabled(false);
@@ -394,11 +408,6 @@ public class Home extends Activities {
 				Shared.copyToClipboard(Shared.mCategoryPath);
 				Shared.alert("Category copied to clipboard");
 				break;
-			/*
-			 * case R.id.menu_add_site: Intent addsite = new Intent(this,
-			 * AddSite.class); addsite.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-			 * startActivity(addsite); break;
-			 */
 			case R.id.menu_bookmark:
 				Bookmark bookmark = new Bookmark();
 				if (bookmark.exists(Shared.mCategoryPathOriginal))
@@ -408,6 +417,11 @@ public class Home extends Activities {
 				break;
 			case android.R.id.home:
 				mSlideMenu.show();
+				break;
+			case R.id.menu_add_site:
+				Shared.openInBrowser("http://www.dmoz.org/editors/editurl/add?url="+Shared.encodeURIComponent(Shared.mIntentReceiver.mURL)+"&cat=" + Shared.encodeURIComponent(Shared.mCategoryPath));
+				Shared.mIntentReceiver.mDomain = "";
+				Shared.mIntentReceiver.mURL = "";
 				break;
 			default:
 				Shared.log("Home().onOptionsItemSelected()$ menuitem not found!", mDebug);

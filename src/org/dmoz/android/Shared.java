@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.UnsupportedEncodingException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.text.NumberFormat;
@@ -69,6 +71,8 @@ public class Shared {
 	public static Home												mHome;
 
 	private static Locale											mLocale;
+
+	public static IntentReceiver 							mIntentReceiver;
 
 	protected Shared() {}
 
@@ -301,7 +305,20 @@ public class Shared {
 		}
 		return false;
 	}
-
+	public static String getDomainFromURL(String aURL) throws URISyntaxException {
+		String[] aURI = aURL.split("/");
+		if(aURI.length > 2 && aURI[2] != null)
+			return aURI[2].startsWith("www.") ? aURI[2].substring(4) : aURI[2];
+		else
+			return "";
+		/*
+			the following code fails with this url:
+			http://m.safaribooksonline.com/hd/public/content?portal=my&fpid=9780240516356&s619=7480&s619w=360&s619h=592&s619uaw=360&s619uah=592#id=9780240516356\firstchapter
+			URI aURI = new URI(aURL);
+			String domain = aURI.getHost();
+			return domain.startsWith("www.") ? domain.substring(4) : domain;
+		*/
+}
 	/*
 	 * public static void prompt(String title, String ok, String cancel, Context
 	 * context) { AlertDialog.Builder builder = new AlertDialog.Builder(context);
