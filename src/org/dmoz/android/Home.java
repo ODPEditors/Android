@@ -168,17 +168,17 @@ public class Home extends Activities {
 			switch (position) {
 				case 0:
 					if (Shared.mCategory != null && Shared.mCategory.sites != null)
-						return "Sites ( " + Shared.mCategory.sites.size() + " )";
+						return "Sites (" + Shared.numberLocale(Shared.mCategory.sites.size()) + ")";
 					else
 						return "Sites";
 				case 1:
 					if (Shared.mCategory != null && Shared.mCategory.name != null)
-						return Shared.mCategory.name + " ( " + Shared.numberLocale(Shared.mCategory.countSites) + " )";
+						return Shared.mCategory.name + " (" + Shared.numberLocale(Shared.mCategory.countSites) + ")";
 					else
 						return "Category";
 				case 2:
 					if (Shared.mCategory != null && Shared.mCategory.altlangs != null)
-						return "Languages ( " + Shared.mCategory.altlangs.size() + " )";
+						return "Languages (" + Shared.numberLocale(Shared.mCategory.altlangs.size()) + ")";
 					else
 						return "Languages";
 					/*

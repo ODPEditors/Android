@@ -42,9 +42,9 @@ public class CategoryAdapter extends ArrayAdapter<Category> {
 		}
 
 		if (category.relationType == 1)
-			holder.name.setText("@" + category.name + " ( " + Shared.numberLocale(category.countSites) + " )");
+			holder.name.setText("@" + category.name + " (" + Shared.numberLocale(category.countSites) + ")");
 		else
-			holder.name.setText(category.name + " ( " + Shared.numberLocale(category.countSites) + " )");
+			holder.name.setText(category.name + " (" + Shared.numberLocale(category.countSites) + ")");
 		return row;
 	}
 
