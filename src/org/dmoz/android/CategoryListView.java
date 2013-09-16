@@ -49,7 +49,7 @@ public class CategoryListView {
 				Shared.mActivity.findViewById(R.id.categories).findViewById(R.id.list_container).setVisibility(View.VISIBLE);
 			} else {
 				((TextView) Shared.mActivity.findViewById(R.id.categories).findViewById(R.id.empty).findViewById(R.id.empty_info))
-						.setText("There is no subcategories in this category.");
+						.setText("There are no subcategories in this category.");
 
 				Shared.mActivity.findViewById(R.id.categories).findViewById(R.id.empty).setVisibility(View.VISIBLE);
 				Shared.mActivity.findViewById(R.id.categories).findViewById(R.id.list_container).setVisibility(View.GONE);

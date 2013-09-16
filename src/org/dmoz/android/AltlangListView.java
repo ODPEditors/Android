@@ -37,7 +37,7 @@ public class AltlangListView {
 
 			} else {
 				((TextView) Shared.mActivity.findViewById(R.id.altlangs).findViewById(R.id.empty).findViewById(R.id.empty_info))
-						.setText("There is no alternative languages in this category.");
+						.setText("There are no alternative languages in this category.");
 				Shared.mActivity.findViewById(R.id.altlangs).findViewById(R.id.empty).setVisibility(View.VISIBLE);
 				Shared.mActivity.findViewById(R.id.altlangs).findViewById(R.id.list_container).setVisibility(View.GONE);
 			}

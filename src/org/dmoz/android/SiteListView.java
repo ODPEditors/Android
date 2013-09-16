@@ -37,7 +37,7 @@ public class SiteListView {
 
 			} else {
 				((TextView) Shared.mActivity.findViewById(R.id.sites).findViewById(R.id.empty).findViewById(R.id.empty_info))
-						.setText("There is no sites in this category.");
+						.setText("There are no sites in this category.");
 
 				Shared.mActivity.findViewById(R.id.sites).findViewById(R.id.empty).setVisibility(View.VISIBLE);
 				Shared.mActivity.findViewById(R.id.sites).findViewById(R.id.list_container).setVisibility(View.GONE);
