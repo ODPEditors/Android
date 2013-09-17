@@ -43,7 +43,7 @@ public class AltlangAdapter extends ArrayAdapter<Category> {
 		}
 
 		Category category = mItems.get(position);
-		holder.title.setText(category.name + " ( " + Shared.numberLocale(category.countSites) + " )");
+		holder.title.setText(category.name + " (" + Shared.numberLocale(category.countSites) + ")");
 		return row;
 	}
 
